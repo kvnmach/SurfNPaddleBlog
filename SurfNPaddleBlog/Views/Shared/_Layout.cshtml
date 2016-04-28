@@ -18,15 +18,23 @@
     </script>
 </head>
 <body>
-    <div class="jumbotron">
-        <div class="container">
-            <h1>SURF & PADDLE CO.</h1>
-            <p>An Ironyard Academy Project Est Fall 2013</p>
+<div class="jumbotron">
+    <div class="container">
+        <h1>SURF & PADDLE CO.</h1>
+        <p>An Ironyard Academy Project Est Fall 2013</p>
 
-        </div>
     </div>
+</div>
 
-    @Scripts.Render("~/bundles/jquery")
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <footer>
+        <p class="pull-right">@Html.ActionLink("Create New", "Create") | Nav Item 1 | Nav Item 2 | Nav Item 3 | Nav Item 4</p>
+        <p> C# BEE Inc Copyright @DateTime.Now.Year, All Right Reserved</p>
+    </footer>
+
+@Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
