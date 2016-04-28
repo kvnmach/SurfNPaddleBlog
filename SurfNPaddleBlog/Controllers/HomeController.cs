@@ -10,7 +10,7 @@ namespace SurfNPaddleBlog.Controllers
 
     public class HomeController : Controller
     {
-        private BlogDbContext db = new BlogDbContext();
+        
 
         public ActionResult Index()
         {
