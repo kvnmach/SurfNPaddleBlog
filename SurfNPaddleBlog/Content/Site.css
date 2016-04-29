@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    
     padding-bottom: 20px;
 }
 
@@ -19,6 +19,54 @@
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
-textarea {
-    max-width: 280px;
+.textarea {
+    max-width: 400px;
 }
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+.body{
+	font-family: 'Ubuntu', serif;
+	letter-spacing: 3px;
+    font-size: 15px;
+    text-align: center;
+	
+}
+
+.jumbotron {
+    background-image: url('http://pichdwallpaper.com/wp-content/uploads/2014/12/surfing_in_teahupoo_tahiti.jpg');
+    height: 600px;
+    position: relative;
+}
+
+.headertext {
+    text-align: center;
+    position: absolute;
+    top:200px;
+    padding-left: 300px;
+    color: #ffffff;
+}
+.bottombody {
+    background-image: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6FyFZb9FP8WucAGwtOBuVah5NcHmHL38w2gASuuJeYt4Xq1KC0Q');
+}
+footer{
+	background-color: #1277C2;
+	color: #FFFFFF;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.imgoverlay {
+
+    text-align: center;
+}
+.main{
+	text-align: left;
+}
+h2.main{
+	color: #1277C2;
+}
+h3.main{
+	color: #1277C2;
+}
+
+
+

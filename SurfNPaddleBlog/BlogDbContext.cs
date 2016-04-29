@@ -16,6 +16,6 @@ public class BlogDbContext : DbContext
     public BlogDbContext() : base("name=BlogDbContext")
     {
     }
-
+    
     public System.Data.Entity.DbSet<SurfNPaddleBlog.Models.BlogPost> BlogPosts { get; set; }
 }

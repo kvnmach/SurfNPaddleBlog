@@ -1,59 +1,77 @@
 ﻿@model IEnumerable<SurfNPaddleBlog.Models.BlogPost>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
+
+    
 }
+<div class="container-fluid wrapper">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <h1 style="color: blue">@Model.First().Title</h1>
+            <p><img class="img-thumbnail" width="75" height="75" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/1999_-_Surf_%C3%A0_Waikiki_Beach_Honolulu_Hawa%C3%AF.jpg"> @Model.First().Author on @Model.First().DateCreated.ToShortDateString()</p>
+        </div>
+        <div class="col-md-5">
+            <img class="img-circle" width="75" height="75" src="http://wannagosurfing.com/wp-content/uploads/2015/07/Tahiti-Beach-Wallpaper-HD.jpg">
+            <h4>Anne Marie</h4>
+            <p>twitter &nbsp; facebook &nbsp; instagram</p>
+        </div>
+    </div>
 
-<!DOCTYPE html>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <p>@Model.First().Body<p>
+            <p>@Html.ActionLink("Details", "Details", new { id = Model.First().Id }) </p>
+            <h2 class="main" style="color: blue"> WOAH, THAT'S RADICAL</h2>
+            <p class="main">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. In nemo, dolore magni fuga possimus beatae, delectus sunt dolorum accusantium facilis eius sit atque perspiciatis, consequatur porro reiciendis quidem. Sequi, quibusdam!</p>
+            <p class="main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nihil consequuntur ad ex, inventore ipsa praesentium consectetur esse sequi repellat, repellendus. Facere iure consequatur provident autem illum. Sit, sequi est</p>
+            <p class="main">read comment| read later | share this post</p>
+        </div>
+        <div class="col-md-5">
+            <img class="img-rounded" width="400" height="400" src="http://www.croydesurfacademy.com/surfshop/wp-content/uploads/2013/04/slide1.jpeg">
+            <p>About This Ad</p>
+            <h3 class="main">SIDEBAR SECTION HEADING</h3>
+            <p class="main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam accusamus odio, id earum aspernatur.Neque atque, perferendis, recusandae officia ad minima sit suscipit praesentium explicabo nisi, alias minus? Numquam, quidem! </p>
+        </div>
+    </div>
+    <div class="row">
+        @*<div class="col-md-6 col-md-offset-1 top">
+            @*<p class="main">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. In nemo, dolore magni fuga possimus beatae, delectus sunt dolorum accusantium facilis eius sit atque perspiciatis, consequatur porro reiciendis quidem. Sequi, quibusdam!</p>
+            <p class="main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis nihil consequuntur ad ex, inventore ipsa praesentium consectetur esse sequi repellat, repellendus. Facere iure consequatur provident autem illum. Sit, sequi est</p>
+            <p class="main">read comment| read later | share this post</p>
+        </div>*@
+        <div class="col-md-5">
+            @*<h3 class="main">SIDEBAR SECTION HEADING</h3>
+            <p class="main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam accusamus odio, id earum aspernatur.Neque atque, perferendis, recusandae officia ad minima sit suscipit praesentium explicabo nisi, alias minus? Numquam, quidem! </p>*@
+        </div>
+    </div>
+</div>
+<hr class="featurette-divider">
+<div class="row-fluid">
+    <div class="col-md-12">
+        <h1>MOST POPULAR POSTS</h1>
+    </div>
+</div>
+<div class="row-fluid">
+    @foreach (var b in Model.Skip(1).Take(4))
+    {
+        <div class="col-sm-3">
+            <div class="bottombody">
+                <p style="color: blue">
+                    <b>@b.Title</b>
+                </p>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Body)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateCreated)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Body)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateCreated)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
-        </tr>
+
+                <p>@b.Body</p>
+                <p>@b.Author &nbsp; @b.DateCreated.ToShortDateString()</p>
+
+            </div>
+
+            <p>@Html.ActionLink("Details","Details", new { id = b.Id })</p>
+        </div>
     }
-    
-    </table>
-</body>
-</html>
+</div>
+<p>
+
+</p>
+
