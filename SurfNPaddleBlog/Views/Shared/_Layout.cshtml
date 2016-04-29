@@ -12,20 +12,20 @@
         }({
             instrumentationKey:"80c8d07c-00eb-4117-8398-99380b2d394c"
         });
-        
+
         window.appInsights=appInsights;
         appInsights.trackPageView();
     </script>
 </head>
 <body>
-<div class="jumbotron">
-    <div class="container">
-        <div class ="headertext">
-            <h1>SURF & PADDLE CO.</h1>
-            <p>An Ironyard Academy Project Est Fall 2013</p>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="headertext">
+                <h1>SURF & PADDLE CO.</h1>
+                <p>An Ironyard Academy Project Est Fall 2013</p>
+            </div>
         </div>
     </div>
-</div>
 
     <div class="container body-content">
         @RenderBody()
@@ -35,7 +35,7 @@
         <p> C# BEE Inc Copyright @DateTime.Now.Year, All Right Reserved</p>
     </footer>
 
-@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
