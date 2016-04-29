@@ -23,5 +23,41 @@ select,
     max-width: 400px;
 }
 
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+.body{
+	font-family: 'Ubuntu', serif;
+	letter-spacing: 3px;
+    font-size: 15px;
+    text-align: center;
+	
+}
+
+.jumbotron {
+    background-image: url('http://pichdwallpaper.com/wp-content/uploads/2014/12/surfing_in_teahupoo_tahiti.jpg');
+    height: 600px;
+    position: relative;
+}
+
+
+footer{
+	background-color: #1277C2;
+	color: #FFFFFF;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.imgoverlay {
+
+    text-align: center;
+}
+.main{
+	text-align: left;
+}
+h2.main{
+	color: #1277C2;
+}
+h3.main{
+	color: #1277C2;
+}
 
 
